@@ -1,0 +1,53 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Precipitation Check</title>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+    </head>
+    <body>
+    	<div class="container"> 
+    		<div class="row">
+    			
+    			<div class="col-md-4">
+    				
+    			</div>
+    			<div class="col-md-4">
+					<h2> Precipitation Check </h2>
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-10">
+				<h4>Enter two dates and a location for the precipitation totals between those two dates.</h4>
+				</div> 
+			</div>
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-10">
+					<form method="post" action="">
+					{% csrf_token %}
+					{{ location_form }}
+
+					<br>
+					{{ beg_form }}
+					<br>
+					{{ end_form }}
+					<br>
+					If you would like to text this information to your phone, enter your phone number here as well.
+					<br>
+					{{ phone_form }}
+					{{ text_form }}
+						<input type="submit" value="Submit" class="button"/>
+    			</form>
+				</div> 
+				
+        		
+    		</div>
+    	</div>
+    </body>

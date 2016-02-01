@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<head>
+        <title>Precipitation Check</title>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+</head>
+<div class="container">
+	<div class="row">
+		<div class="col-md-2">
+		
+		</div>
+		<div class="col-md-10">
+			<h2> Here are the precipitations for {{ locale }}. </h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+		
+		</div>
+		<div class="col-md-8">
+			<h3> {{ beg }} - {{ end }} </h3>
+		</div>
+	</div>
+	{% for list in result_list %}
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-9">
+				The precipitation total that was measured on {{list.0}} was  {{list.1}} millimeters.
+			</div>
+		</div>
+
+	{% endfor %}
+</div>
