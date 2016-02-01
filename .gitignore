@@ -1,0 +1,6 @@
+settings.py
+*.pyc
+*.swp
+wsgi.py
+sms.py
+test.py
